@@ -18,7 +18,9 @@ Follow the instructions in the Prerequisites file, when you finished the prerequ
 
 Go back to the Terminal
 
-Execute the file Install_Kong_OSS.sh, let's make the following command in your terminal :
+Execute the file Install_Kong_OSS.sh.
+To do that, let's make the following command in your terminal :
+    
     ./Install_Kong_OSS.sh
 
 Kongratulation, you just finished the Installation of Kong OSS !
