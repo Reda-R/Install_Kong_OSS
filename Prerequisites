@@ -1,0 +1,15 @@
+INSTALL DOCKER ON MAC OS
+
+PREREQUISITES :
+
+<-- INSTALL DOCKER -->
+
+Open the following link : https://www.docker.com/get-started
+
+Download Docker for Mac OS
+
+<-- INSTALL POSTGRESQL 12.2 -->
+
+<-- OPEN DOCKER -->
+
+    Command + Space, Search "Docker"
