@@ -4,7 +4,7 @@
 
 docker network create kong-net
 
-wait 5s
+sleep 5s
 
 #START YOUR DATABASE
 
@@ -16,7 +16,7 @@ docker run -d --name kong-database \
                -e "POSTGRES_PASSWORD=kong" \
                postgres:12.8
 
-wait 5s
+sleep 5s
 
 #PREPARE YOUR DATABASE
 
@@ -29,7 +29,7 @@ docker run --rm \
      -e "KONG_CASSANDRA_CONTACT_POINTS=kong-database" \
      kong:latest kong migrations bootstrap
 
-wait 5s
+sleep 5s
 
 #START KONG
 
@@ -51,7 +51,7 @@ docker run -d --name kong \
      -p 127.0.0.1:8444:8444 \
      kong:latest
 
-wait 5s
+sleep 5s
 
 #USE KONG
 
