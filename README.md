@@ -2,21 +2,17 @@ Install Kong OSS using Docker
 
 # Prerequisites
 
-Open a Terminal : cmd + space and search "Terminal"
+Install Docker Desktop.
+
+After installing Docker, let's move to the next part : Install_Kong_OSS
+
+# Install_Kong_OSS
 
 Tap the following commands in the Terminal :
 
     git clone https://github.com/Reda-R/Install_Kong_OSS.git
 
     cd Install_Kong_OSS/
-
-    open Prerequisites
-
-Follow the instructions in the Prerequisites file, when you finished the prerequisites let's move to the next part : Install_Kong_OSS
-
-# Install_Kong_OSS
-
-Go back to the Terminal
 
 Execute the file Install_Kong_OSS.sh.
 To do that, let's make the following command in your terminal :

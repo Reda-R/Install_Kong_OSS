@@ -1,26 +1,12 @@
 #INSTALL DOCKER ON MAC OS
 
-#PREREQUISITES :
-    #INSTALL DOCKER
-    #INSTALL POSTGRESQL 12
-    #OPEN DOCKER
-
 #Create a Docker network
-#You will need to create a custom network to allow the containers to discover and communicate with each other. In this example kong-net is the network name, you can use any name.
 
 docker network create kong-net
 
+wait 5s
 
 #START YOUR DATABASE
-
-#If you wish to use a Cassandra container:
-
-#$ docker run -d --name kong-database \
-#               --network=kong-net \
-#               -p 9042:9042 \
-#               cassandra:3
-
-#If you wish to use a PostgreSQL container:
 
 docker run -d --name kong-database \
                --network=kong-net \
@@ -30,10 +16,9 @@ docker run -d --name kong-database \
                -e "POSTGRES_PASSWORD=kong" \
                postgres:12.8
 
+wait 5s
 
 #PREPARE YOUR DATABASE
-
-#Run the migrations with an ephemeral Kong container:
 
 docker run --rm \
      --network=kong-net \
@@ -44,13 +29,9 @@ docker run --rm \
      -e "KONG_CASSANDRA_CONTACT_POINTS=kong-database" \
      kong:latest kong migrations bootstrap
 
-#In the above example, both Cassandra and PostgreSQL are configured, but you should update the KONG_DATABASE environment variable with either cassandra or postgres.
-#Note for Kong < 0.15: with Kong versions below 0.15 (up to 0.14), use the up sub-command instead of bootstrap. Also note that with Kong < 0.15, migrations should never be run concurrently; only one Kong node should be performing migrations at a time. This limitation is lifted for Kong 0.15, 1.0, and above.
-
+wait 5s
 
 #START KONG
-
-#When the migrations have run and your database is ready, start a Kong container that will connect to your database container, just like the ephemeral migrations container:
 
 docker run -d --name kong \
      --network=kong-net \
@@ -70,9 +51,12 @@ docker run -d --name kong \
      -p 127.0.0.1:8444:8444 \
      kong:latest
 
+wait 5s
 
 #USE KONG
 
-#Kong is running:
-
 curl -i http://localhost:8001/
+
+open http://localhost:8002/
+
+echo "<----- Kongratulation, you finished the Installation of Kong OSS ! ----->"
