@@ -8,7 +8,7 @@ sleep 30s
 #Step 1. Pull the Kong Gateway Docker image
 #Pull the following Docker image.
 
-docker pull kong/kong-gateway:2.6.0.0-alpine
+docker pull kong/kong-gateway:2.7.0.0-alpine
 
 sleep 2s
 
@@ -16,7 +16,7 @@ sleep 2s
 #You should now have your Kong Gateway image locally.
 #Tag the image.
 
-docker tag kong/kong-gateway:2.6.0.0-alpine kong-ee
+docker tag kong/kong-gateway:2.7.0.0-alpine kong-ee
 
 sleep 2s
 
